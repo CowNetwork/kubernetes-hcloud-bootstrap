@@ -1,0 +1,9 @@
+---
+galaxy_info:
+  role_name: cow.kubernetes-hcloud-bootstrap
+  author: Yannic Rieger
+  description: Manage and install basic components needed for our Kubernetes clusters.
+  license: MIT
+  min_ansible_version: 1.2
+  galaxy_tags: []
+dependencies: []
