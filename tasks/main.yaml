@@ -6,7 +6,7 @@
 - name: copy to master
   copy:
     src: 'hetzner-cloud-controller-manager-{{ hcloud_controller_manager_version }}.yaml'
-    dst: '/root/hetzner-cloud-controller-manager.yaml'
+    dest: '/root/hetzner-cloud-controller-manager.yaml'
 
 - name: apply controller manifest
   shell: 'kubectl apply -f /root/hetzner-cloud-controller-manager.yaml'
