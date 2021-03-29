@@ -2,6 +2,8 @@
 - name: create hcloud token secret
   shell: 'kubectl -n kube-system create secret generic hcloud --from-literal=token={{ hcloud_token }}'
   delegate_to: '{{ hostvars[groups.kube_master[0]].ansible_host }}'
+  run_once: true
 - name: apply controller manifest
-  shell: 'kubectl apply -f hetzner-cloud-controller-{{ hcloud_controller_manager_version }}.yaml'
+  shell: 'kubectl apply -f {{ roles_path }}/files/hetzner-cloud-controller-{{ hcloud_controller_manager_version }}.yaml'
   delegate_to: '{{ hostvars[groups.kube_master[0]].ansible_host }}'
+  run_once: true
