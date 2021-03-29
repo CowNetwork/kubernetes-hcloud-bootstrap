@@ -4,6 +4,6 @@
   delegate_to: '{{ hostvars[groups.kube_master[0]].ansible_host }}'
   run_once: true
 - name: apply controller manifest
-  shell: 'kubectl apply -f {{ role_path }}/files/hetzner-cloud-controller-{{ hcloud_controller_manager_version }}.yaml'
+  shell: 'kubectl apply -f {{ role_path }}/files/hetzner-cloud-controller-manager-{{ hcloud_controller_manager_version }}.yaml'
   delegate_to: '{{ hostvars[groups.kube_master[0]].ansible_host }}'
   run_once: true
